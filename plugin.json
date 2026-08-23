@@ -1,6 +1,6 @@
 {
   "id": "soksak-plugin-terminal-kitty",
-  "name": { "en": "Kitty Terminal", "ko": "Kitty 터미널" }, "version": "0.0.10",
+  "name": { "en": "Kitty Terminal", "ko": "Kitty 터미널" }, "version": "0.0.11",
   "appVersionRequirement": "0.0.1",
   "description": { "en": "Terminal view rendered from the kitty provider frame.", "ko": "Kitty 공급자 프레임을 렌더링하는 터미널 뷰입니다." },
   "entry": "main.js", "permissions": ["ui", "ui:statusbar", "commands", "programs", "sidecar", "secrets", "terminal"],
@@ -20,8 +20,10 @@
     "programs": [{ "id": "terminal-kitty", "title": { "en": "Kitty Terminal", "ko": "Kitty 터미널" }, "kind": "view", "view": "content" }],
     "views": [{ "id": "content", "title": { "en": "Kitty Terminal", "ko": "Kitty 터미널" }, "icon": "VT", "surfaces": ["tab"], "status": ["connecting", "error"] }]
   },
-  "sidecars": [
-    { "name": "pty", "interface": { "id": "soksak-spec-sidecar-pty", "requirement": "0.0.1" } },
-    { "name": "recovery", "interface": { "id": "soksak-spec-sidecar-terminal", "requirement": "0.0.1" } }
-  ]
+  "runtimeDependencies": {
+    "sidecars": [
+      { "id": "soksak-sidecar-pty", "version": "0.0.6", "url": "https://github.com/soksak-ai/soksak-sidecar-pty/releases/download/v0.0.6/release.json", "size": 2996, "sha256": "32e05911074b381222cbcac6004c76c93e73c9fe967df57b649af5abb5c69c40" },
+      { "id": "soksak-sidecar-terminal-kitty", "version": "0.0.7", "url": "https://github.com/soksak-ai/soksak-sidecar-terminal-kitty/releases/download/v0.0.7/release.json", "size": 2788, "sha256": "d4f4dbec46fd8938b0c1cdf368cefd313ef688fc05a56f6b0c336a9a6c3b53e3" }
+    ]
+  }
 }

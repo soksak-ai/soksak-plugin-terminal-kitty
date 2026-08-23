@@ -11,7 +11,7 @@ describe("Kitty terminal plugin wiring", () => {
     activate({ app, subscriptions: [] });
     expect(activateProvider).toHaveBeenCalledWith(app, [], {
       pluginId: "soksak-plugin-terminal-kitty", engineId: "kitty",
-      recoverySidecar: "recovery", programId: "terminal-kitty",
+      ptySidecarId: "soksak-sidecar-pty", terminalSidecarId: "soksak-sidecar-terminal-kitty", programId: "terminal-kitty",
     });
   });
 });
