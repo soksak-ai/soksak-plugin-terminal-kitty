@@ -9,8 +9,16 @@ installed independently.
 
 ## Verification
 
+The package depends on `@soksak/soksak-contract-plugin-terminal` and `@soksak/soksak-kit-plugin-terminal`,
+so every `make` invocation that installs requires `REGISTRY` on the make command line,
+`https://registry.npmjs.org` included once the packages are published there. A value from the
+environment is refused. The Makefile reads the requirement from `frontend/package.json` and refuses
+`REGISTRY required: this package depends on @soksak/...` when it is absent.
+
+The build input is identified by the `pnpm-lock.yaml` integrity, not by `REGISTRY`. pnpm fetches from
+`REGISTRY` only a package whose integrity its content-addressable store does not already hold, so a
+second install of the same lockfile on the same machine reads the store and never contacts `REGISTRY`.
+
 ```sh
-pnpm --dir frontend install --frozen-lockfile
-pnpm --dir frontend verify
-node scripts/check-release-workflow.mjs
+make verify REGISTRY=http://host:port/
 ```
