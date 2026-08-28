@@ -1,6 +1,6 @@
 {
   "id": "soksak-plugin-terminal-kitty",
-  "name": { "en": "Kitty Terminal", "ko": "Kitty 터미널" }, "version": "0.0.28",
+  "name": { "en": "Kitty Terminal", "ko": "Kitty 터미널" }, "version": "0.0.29",
   "appVersionRequirement": "0.0.1",
   "description": { "en": "Terminal view rendered from the kitty provider frame.", "ko": "Kitty 공급자 프레임을 렌더링하는 터미널 뷰입니다." },
   "entry": "main.js", "permissions": ["ui", "ui:statusbar", "commands", "programs", "sidecar", "secrets", "terminal", "clipboard:read", "clipboard:write"],
@@ -38,7 +38,7 @@
   "runtimeDependencies": {
     "sidecars": [
       { "id": "soksak-sidecar-pty", "version": "0.0.13" },
-      { "id": "soksak-sidecar-terminal-kitty", "version": "0.0.18" }
+      { "id": "soksak-sidecar-terminal-kitty", "version": "0.0.19" }
     ]
   }
 }
